@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Alfa-test</title>
+</head>
+<body>
+  <div style="display: none;">
+    <include src="markup/img/sprite-auto.svg"></include>
+  </div>
+  <div id="root">
+    <div class="wrapper">
+      <div class="container">
+        <header class="site-header">
+          <div class="site-header__container">
+            <div class="site-header__checkbox checkbox">
+              <input class="visually-hidden" type="checkbox" name="liked" id="liked">
+              <label for="liked">Show only liked</label>
+            </div>
+          </div>
+        </header>
+        <main>
+          <section class="site-main">
+            <ul class="site-main__list">
+              <li class="site-main__item">
+                <article class="card">
+                  <figure class="card__content">
+                    <div class="card__image-wrapper">
+                      <img class="card__image" src="./img/placeholder1.jpg" width="200" height="100" alt="alttext">
+                    </div>
+                    <figcaption class="card__text">
+                      Some text
+                    </figcaption>
+                  </figure>
+                  <div class="card__controls">
+                    <button class="button card__button" type="button" aria-label="like">
+                      <svg width="24" height="24" aria-hidden="true">
+                        <use xlink:href="#icon-thumb"></use>
+                      </svg>
+                    </button>
+                    <button class="button card__button card__button--delete" type="button" aria-label="delete">
+                      <svg width="24" height="24" aria-hidden="true">
+                        <use xlink:href="#icon-recycle"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+  <script src="./bundle.js"></script>
+</body>
+</html>
