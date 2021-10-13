@@ -32,9 +32,16 @@
   padding: 5px;
 }
 
+.card__heading {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: normal;
+}
+
 .card__controls {
   display: flex;
   flex-wrap: wrap;
+  margin-top: auto;
   padding: 5px;
 }
 

@@ -19,6 +19,7 @@
       <div class="container">
         <header class="site-header">
           <div class="site-header__container">
+            <h1 class="site-header__heading">NASA Astronomy Picture of the Day (APOD)</h1>
             <div class="site-header__checkbox checkbox">
               <input class="visually-hidden" type="checkbox" name="liked" id="liked">
               <label for="liked">Show only liked</label>
@@ -27,15 +28,18 @@
         </header>
         <main>
           <section class="site-main">
+            <h2 class="visually-hidden">Astronomy Picture of the Day cards</h2>
             <ul class="site-main__list">
               <li class="site-main__item">
                 <article class="card">
                   <figure class="card__content">
-                    <div class="card__image-wrapper">
-                      <img class="card__image" src="./img/placeholder1.jpg" width="200" height="100" alt="alttext">
-                    </div>
+                    <a class="card__image-link" href="#" target="_blank" rel="noreferrer">
+                      <div class="card__image-wrapper">
+                        <img class="card__image" src="./img/placeholder1.jpg" width="200" height="100" alt="alttext">
+                      </div>
+                    </a>
                     <figcaption class="card__text">
-                      Some text
+                      <h3 class="card__heading">Some text</h3>
                     </figcaption>
                   </figure>
                   <div class="card__controls">

@@ -359,6 +359,7 @@ body {
 
 .checkbox label {
   position: relative;
+  display: block;
   padding-left: 30px;
   cursor: pointer;
   -webkit-user-select: none;
@@ -385,9 +386,30 @@ body {
   box-shadow: 0 1px 5px 0 #aeaeae; }
 
 .site-header__container {
+  display: flex;
+  align-items: center;
   max-width: 1280px;
   margin: 0 auto;
   padding: 20px 40px; }
+  @media (max-width: 768px) {
+    .site-header__container {
+      flex-direction: column;
+      align-items: stretch; } }
+
+.site-header__heading {
+  margin: 0;
+  margin-right: 20px;
+  font-size: 28px; }
+  @media (max-width: 768px) {
+    .site-header__heading {
+      margin-right: 0;
+      margin-bottom: 20px; } }
+
+.site-header__checkbox {
+  margin-left: auto; }
+  @media (max-width: 768px) {
+    .site-header__checkbox {
+      margin-left: 0%; } }
 
 .site-main {
   margin: 0 auto;
@@ -397,11 +419,10 @@ body {
 
 .site-main__list {
   margin: 0;
-  margin-top: -20px;
-  margin-left: -20px;
   padding: 0;
   display: grid;
-  grid-column-gap: 20px;
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
   grid-template-columns: 1fr 1fr 1fr;
   list-style: none; }
   @media (max-width: 1024px) {
@@ -412,9 +433,7 @@ body {
       grid-template-columns: 1fr; } }
 
 .site-main__item {
-  display: flex;
-  margin-top: 20px;
-  margin-left: 20px; }
+  display: flex; }
 
 .card {
   display: flex;
@@ -442,9 +461,15 @@ body {
 .card__text {
   padding: 5px; }
 
+.card__heading {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: normal; }
+
 .card__controls {
   display: flex;
   flex-wrap: wrap;
+  margin-top: auto;
   padding: 5px; }
 
 .card__button--delete {
