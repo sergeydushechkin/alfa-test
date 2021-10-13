@@ -1,20 +1,28 @@
 import * as React from "react";
+import {CardData} from "../types";
 
-const Card:React.FunctionComponent = () => {
+interface Props {
+  card: CardData;
+}
+
+const Card:React.FunctionComponent<Props> = (props: Props) => {
+  const {card} = props;
+  const {title, thumbnail, isLiked, href, explanation} = card;
+
   return (
     <article className="card">
       <figure className="card__content">
-        <a className="card__image-link" href="#" target="_blank" rel="noreferrer">
-        <div className="card__image-wrapper">
-          <img className="card__image" src="./img/placeholder1.jpg" width="200" height="100" alt="alttext" />
-        </div>
+        <a className="card__image-link" href={href} target="_blank" rel="noreferrer">
+          <div className="card__image-wrapper">
+            <img className="card__image" src={thumbnail} width="200" height="100" alt={explanation} />
+          </div>
         </a>
         <figcaption className="card__text">
-          <h3 className="card__heading">Some text</h3>
+          <h3 className="card__heading">{title}</h3>
         </figcaption>
       </figure>
       <div className="card__controls">
-        <button className="button card__button" type="button" aria-label="like">
+        <button className={`button card__button${isLiked && ` button--active`}`} type="button" aria-label="like">
           <svg width="24" height="24" aria-hidden="true">
             <use xlinkHref="#icon-thumb"></use>
           </svg>
