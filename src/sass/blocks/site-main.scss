@@ -1,20 +1,25 @@
 .site-main {
+  max-width: 1280px;
   margin: 0 auto;
   padding: 40px;
   padding-top: 0;
-  max-width: 1280px;
+
+  @media (max-width: $mobile-width) {
+    padding: 0;
+    padding-bottom: 40px;
+  }
 }
 
 .site-main__list {
+  display: grid;
   margin: 0;
   padding: 0;
 
-  display: grid;
+  list-style: none;
+
   grid-column-gap: 40px;
   grid-row-gap: 40px;
   grid-template-columns: 1fr 1fr 1fr;
-
-  list-style: none;
 
   @media (max-width: $tablet-width) {
     grid-template-columns: 1fr 1fr;

@@ -9,6 +9,11 @@
   background-color: #ffffff;
   border-radius: 4px;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+
+  @media (max-width: $mobile-width) {
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
 .card__content {
@@ -33,9 +38,9 @@
 }
 
 .card__heading {
+  font-weight: normal;
   font-size: 16px;
   line-height: 18px;
-  font-weight: normal;
 }
 
 .card__controls {
