@@ -369,7 +369,7 @@ body {
   .checkbox label::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -2px;
     left: 0;
     width: 24px;
     height: 24px;
