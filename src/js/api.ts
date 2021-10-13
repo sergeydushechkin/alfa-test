@@ -3,7 +3,7 @@ import axios, {AxiosInstance} from "axios";
 const SERVER = `https://api.nasa.gov/planetary`;
 const TIMEOUT = 5000;
 
-export const createAPI = (onError: (Error) => never): AxiosInstance => {
+export const createAPI = (onError: (Error) => void): AxiosInstance => {
   const api = axios.create({
     baseURL: `${SERVER}`,
     timeout: TIMEOUT,

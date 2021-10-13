@@ -19,4 +19,8 @@ const getFilteredCards = createSelector(
     })
 );
 
-export {getShowState, getFilteredCards};
+const getError = (state: State): string => {
+  return state.error;
+};
+
+export {getShowState, getCards, getFilteredCards, getError};

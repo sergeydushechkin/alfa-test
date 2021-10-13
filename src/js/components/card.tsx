@@ -3,11 +3,13 @@ import {CardData} from "../types";
 
 interface Props {
   card: CardData;
+  onLikeButtonClick: (string) => void;
+  onDeleteButtonClick: (string) => void;
 }
 
 const Card:React.FunctionComponent<Props> = (props: Props) => {
-  const {card} = props;
-  const {title, thumbnail, isLiked, href, explanation} = card;
+  const {card, onLikeButtonClick, onDeleteButtonClick} = props;
+  const {id, title, thumbnail, isLiked, href, explanation} = card;
 
   return (
     <article className="card">
@@ -22,12 +24,12 @@ const Card:React.FunctionComponent<Props> = (props: Props) => {
         </figcaption>
       </figure>
       <div className="card__controls">
-        <button className={`button card__button${isLiked && ` button--active`}`} type="button" aria-label="like">
+        <button className={`button card__button${isLiked && ` button--active`}`} type="button" aria-label="like" onClick={() => onLikeButtonClick(id)}>
           <svg width="24" height="24" aria-hidden="true">
             <use xlinkHref="#icon-thumb"></use>
           </svg>
         </button>
-        <button className="button card__button card__button--delete" type="button" aria-label="delete">
+        <button className="button card__button card__button--delete" type="button" aria-label="delete" onClick={() => onDeleteButtonClick(id)}>
           <svg width="24" height="24" aria-hidden="true">
             <use xlinkHref="#icon-recycle"></use>
           </svg>

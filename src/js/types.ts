@@ -5,6 +5,7 @@ interface CardData {
   href: string;
   type: string;
   isLiked: boolean;
+  id: string;
 }
 
 interface RowCard {

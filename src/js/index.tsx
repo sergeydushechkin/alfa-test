@@ -6,12 +6,12 @@ import {Provider} from "react-redux";
 import thunk from "redux-thunk";
 
 import {createAPI} from "./api";
-import {Operation, reducer} from "./reducer/reducer";
+import {ActionCreator, reducer} from "./reducer/reducer";
 
 import App from "./components/app";
 
-const onError = (err:Error) => {
-  throw err;
+const onError = (err: Error) => {
+  store.dispatch(ActionCreator.changeError(err.message));
 };
 
 const api = createAPI(onError);
@@ -23,8 +23,6 @@ const store = createStore(
         window[`__REDUX_DEVTOOLS_EXTENSION__`] ? window[`__REDUX_DEVTOOLS_EXTENSION__`]() : (f) => f
     )
 );
-
-store.dispatch(Operation.getCardsData());
 
 ReactDOM.render(
     <Provider store={store}>
